@@ -27,7 +27,7 @@ class LinearRegression:
         self.theta = np.ones(shape=(x.shape[1]))
         # 迭代，批梯度下降
         new_theta = np.zeros(shape=(x.shape[1]))
-        while(LinearRegression.__distance(self.theta, new_theta) > 0.0001):
+        while(self.__distance(self.theta, new_theta) > 0.0001):
             self.theta = new_theta.copy()
             for j in range(self.theta.shape[0]):
                 new_theta[j] = self.theta[j] - learning_rate * np.sum(np.dot(self.predict(data_x) - data_label, x[:,j]))
@@ -50,7 +50,7 @@ class LinearRegression:
         输入：
             a、b：两个向量
     '''
-    def __distance(a, b):
+    def __distance(self, a, b):
         return np.sqrt(np.sum((b - a) * (b - a)))
 
 
