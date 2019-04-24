@@ -114,3 +114,5 @@ if __name__ == '__main__':
                                         random_state=10)
     opt_model4.fit(data_x, data_label)
     print(opt_model4.oob_score_)    # 0.984
+
+# 参考文献：https://www.cnblogs.com/pinard/p/6160412.html
